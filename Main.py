@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# Fallback for Plotly if package is installing/missing
+# Fallback for Plotly if package is installing or missing
 try:
     import plotly.express as px
     HAS_PLOTLY = True
@@ -214,62 +214,4 @@ with st.sidebar:
 # -----------------------------------------------------------------------------
 if page == "Overview":
     st.markdown(f"<div class='main-header'>{profile_info['name']}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='sub-header'>{profile_info['title']}</div>", unsafe_allow_html=True)
-    
-    st.write(profile_info['summary'])
-    st.divider()
-
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.metric(label="ABM Pipeline Generated", value="$500M", delta="HighRadius")
-    with col2:
-        st.metric(label="ARR Converted", value="$100K", delta="LogiNext")
-    with col3:
-        st.metric(label="Undergrad GPA", value="3.87 / 4.0", delta="SRM IST")
-    with col4:
-        st.metric(label="Merit Scholarship", value="$20,000", delta="Rice University")
-
-    st.subheader("Core Competencies")
-    cols = st.columns(3)
-    cols[0].markdown("**Data & Engineering**\n- Python & Predictive Modeling\n- AI Agent Architecture\n- Lean & Six Sigma Analysis")
-    cols[1].markdown("**Strategy & Advisory**\n- Go-to-Market (GTM) Strategy\n- Enterprise Discovery & BANT\n- Process Optimization")
-    cols[2].markdown("**Leadership & Management**\n- Stakeholder Engagement\n- Agile & Sprint Planning\n- Cross-Functional Teams")
-
-# -----------------------------------------------------------------------------
-# PAGE 2: WORK EXPERIENCE
-# -----------------------------------------------------------------------------
-elif page == "Work Experience":
-    st.title("💼 Professional Experience")
-    
-    selected_domain = st.selectbox("Filter by Domain", ["All"] + list(set([e['domain'] for e in experiences])))
-    
-    for exp in experiences:
-        if selected_domain == "All" or exp['domain'] == selected_domain:
-            with st.container():
-                st.markdown(f"""
-                <div class='card'>
-                    <div class='card-title'>{exp['role']}</div>
-                    <div class='card-subtitle'>{exp['company']} | {exp['location']} ({exp['period']})</div>
-                </div>
-                """, unsafe_allow_html=True)
-                for h in exp['highlights']:
-                    st.write(f"• {h}")
-                st.write("")
-
-# -----------------------------------------------------------------------------
-# PAGE 3: EDUCATION & PROJECTS
-# -----------------------------------------------------------------------------
-elif page == "Education & Projects":
-    st.title("🎓 Education & Academic Engineering Projects")
-    
-    st.subheader("Education")
-    for edu in education:
-        st.markdown(f"**{edu['degree']}** — *{edu['institution']}* ({edu['period']})")
-        st.caption(f"{edu['location']} | {edu['details']}")
-        st.write("")
-        
-    st.divider()
-    st.subheader("Featured Engineering & Data Projects")
-    p_cols = st.columns(3)
-    for idx, proj in enumerate(academic_projects):
-        with p_cols[idx]:
+    st.markdown(f
