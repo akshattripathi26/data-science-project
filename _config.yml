@@ -1,0 +1,71 @@
+# -----------------------------------------------------------------------------
+# SITE CONFIGURATION
+# -----------------------------------------------------------------------------
+title: Akshat Tripathi[cite: 1]
+title_separator: "|"
+subtitle: Engineering Management Graduate | Consulting, Data Strategy & Go-To-Market[cite: 1]
+description: >-
+  Engineering Management graduate student at Rice University with experience in consulting,
+  go-to-market strategy, and data-driven problem solving across SaaS and advisory environments[cite: 1].
+url: "https://yourusername.github.io" # Replace with your GitHub Pages URL or custom domain
+baseurl: "" # Leave empty if hosting at root username.github.io
+
+# -----------------------------------------------------------------------------
+# AUTHOR & PROFILE INFORMATION
+# -----------------------------------------------------------------------------
+author:
+  name: Akshat Tripathi[cite: 1]
+  email: akshat.tripathi26@gmail.com[cite: 1]
+  phone: "(281) 779-7677"[cite: 1]
+  location: "Houston, TX"[cite: 1]
+  bio: "MS in Engineering Management & Leadership Candidate at Rice University[cite: 1]"
+  avatar: "/assets/images/profile.jpg"
+  affiliation: "Rice University"[cite: 1]
+  linkedin: "akshat-tripathi-"[cite: 1]
+  
+  social_links:
+    - title: "LinkedIn"
+      url: "https://linkedin.com/in/akshat-tripathi-"[cite: 1]
+      icon: "fab fa-fw fa-linkedin"
+    - title: "Email"
+      url: "mailto:akshat.tripathi26@gmail.com"[cite: 1]
+      icon: "fas fa-fw fa-envelope"
+
+# -----------------------------------------------------------------------------
+# SITE NAVIGATION
+# -----------------------------------------------------------------------------
+navigation:
+  - title: "Overview"
+    url: "/"
+  - title: "Experience"
+    url: "/#experience"
+  - title: "Projects"
+    url: "/#projects"
+  - title: "Skills & Certifications"
+    url: "/#skills"
+  - title: "Contact"
+    url: "/#contact"
+
+# -----------------------------------------------------------------------------
+# THEME & BUILD SETTINGS (Compatible with standard GitHub Pages / Jekyll)
+# -----------------------------------------------------------------------------
+theme: jekyll-theme-minimal # Works out-of-the-box with GitHub Pages
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Jekyll Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# File Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - README.md
+  - Main.py
+  - requirements.txt
